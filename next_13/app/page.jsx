@@ -6,13 +6,14 @@
  * Acknowledgements: Traversy Media's Youtube Next.js 13 series
  *
  * Tips:
+ * npm run dev (from root folder)
+ *
  * Creates a React app with the contents a folder called frontend
  * npx create-react-app@latest frontend --template redux
+ * ^^ may have used: npx create-next-app@latest^^
  *
- * To get app running, affirm correct folder,
- * (for this project, run from root folder)
- * npm run client (starts frontend)
- * (same as using: npm run start  while in the 'frontend' folder)
+ * next 13 - react frame work server side rendering (SSR)
+ * react - front end JS library, client side rendering (CSR)
  *
  *
  * cmd+D will change opening and closing tag simultaneously
@@ -37,9 +38,29 @@
  */
 
 import React from "react";
+import Link from "next/link";
+
+export const metadata = {
+  title: "CastleBomber Title",
+};
 
 const HomePage = () => {
-  return <div>HomePage</div>;
+  return (
+    <div>
+      <h1> Welcome to CBombs's Page </h1>
+      <ul>
+        <li>
+          <Link href="/">Home</Link>
+        </li>
+        <li>
+          <Link href="/about">About</Link>
+        </li>
+        <li>
+          <Link href="/about/team">Team</Link>
+        </li>
+      </ul>
+    </div>
+  );
 };
 
 export default HomePage;
